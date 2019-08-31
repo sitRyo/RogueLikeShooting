@@ -9,7 +9,6 @@ public class TankMove : MonoBehaviour {
         public float elapsed;
         public bool isLive;
         private float deadline;
-        
 
         public Shell (GameObject sh) {
             shell = sh;
@@ -36,6 +35,11 @@ public class TankMove : MonoBehaviour {
 
     private Vector3 m_ShellPosition;
     private List<Shell> Shells = new List<Shell>();
+    private PlaySE m_SE;
+
+    private void Start() {
+        m_SE = GetComponent<PlaySE>();
+    }
 
     private void Update() {
         velocity = Vector3.zero;
@@ -65,6 +69,7 @@ public class TankMove : MonoBehaviour {
             GameObject m_InstantiateShell = Instantiate(m_Shell, m_ShellPosition, transform.rotation);
             Shell sh = new Shell(m_InstantiateShell);
             Shells.Add(sh);
+            m_SE.PlaySoundEffect();
         }
 
         foreach (var sh in Shells) {
