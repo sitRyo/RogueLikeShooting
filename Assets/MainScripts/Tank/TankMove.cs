@@ -26,7 +26,10 @@ public class TankMove : MonoBehaviour {
 
         if (velocity.magnitude > 0) {
             transform.position += velocity;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(velocity), rotationSpeed);
+            transform.rotation = Quaternion.Slerp(
+                        transform.rotation,
+                        Quaternion.LookRotation(velocity), 
+                        rotationSpeed);
         }
 
 
