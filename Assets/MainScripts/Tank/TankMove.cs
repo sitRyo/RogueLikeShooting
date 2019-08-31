@@ -9,7 +9,6 @@ public class TankMove : MonoBehaviour {
         public float elapsed;
         public bool isLive;
         private float deadline;
-        
 
         public Shell (GameObject sh) {
             shell = sh;
