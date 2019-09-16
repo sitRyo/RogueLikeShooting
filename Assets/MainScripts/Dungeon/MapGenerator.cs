@@ -13,6 +13,7 @@ public class MapGenerator : MonoBehaviour
 
     [Range(0, 100)]
     public int randomFillPercent;
+    public GameObject wallPrefab;
 
     public int smoothTimes;
 
@@ -25,10 +26,12 @@ public class MapGenerator : MonoBehaviour
 
     void Update()
     {
+        
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GenerateMap();
-        }
+        }*/
     }
 
     void GenerateMap()
@@ -122,7 +125,7 @@ public class MapGenerator : MonoBehaviour
         }
         return count;
     }
-
+/*
     void OnDrawGizmos()
     {
         if (map != null)
@@ -138,5 +141,5 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
-
+*/
 }
